@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_size_normal">52dp</dimen>
+    <dimen name="fragment_stream_fab_margin_bottom">68dp</dimen>
+    <dimen name="full_horizontal_padding_for_stories">40dp</dimen>
+</resources>

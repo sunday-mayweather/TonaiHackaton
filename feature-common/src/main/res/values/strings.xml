@@ -1,0 +1,104 @@
+<resources>
+    <string name="app_name">Summaries</string>
+    
+    <string name="topic_micronutrients">Micronutrients</string>
+    <string name="topic_longevity">Longevity</string>
+    <string name="topic_cognitive">Cognitive performance</string>
+    <string name="topic_muscle_growth">Muscle growth</string>
+    <string name="topic_sleep">Sleep</string>
+
+    <!-- Common errors -->
+    <string name="error_no_internet">"No access to Internet, check your connection!"</string>
+    <string name="error_unknown">"Oops! Something went wrong, try again later!"</string>
+
+    <!-- Policies screens and labels -->
+    <string name="legal_policy_lbl">"By continuing, you agree to our"</string>
+    <string name="legal_and_lbl">"&amp;"</string>
+    <string name="legal_terms_lbl">"Terms"</string>
+    <string name="legal_privacy_lbl">"Privacy Policy"</string>
+    <string name="legal_policy_title">"This is policy screen"</string>
+
+    <!-- Onboarding screens -->
+    <string name="onboarding_welcome_continue">Continue -></string>
+    <string name="onboarding_welcome_title">Welcome to Samurai - simple solution to be up to date with summaries of cutting edge health researches.</string>
+
+    <string name="onboarding_choose_topic">Choose topics that are interesting to you:</string>
+    <string name="onboarding_failed_to_continue">Choose at least 1 topic</string>
+    <string name="onboarding_finish">Continue</string>
+
+    <!-- Auth screens -->
+
+    <!-- Login -->
+    <string name="auth_login_title">"Login"</string>
+    <string name="auth_login_email">"Email"</string>
+    <string name="auth_login_password">"Password"</string>
+    <string name="auth_login_forgot_password">"Forgot password?"</string>
+    <string name="auth_login_next">"Login"</string>
+    <string name="auth_login_error">"Wrong Nickname or Password!"</string>
+
+    <!-- Reset password -->
+    <string name="auth_reset_password_title">"Password reset"</string>
+    <string name="auth_reset_password_email">"Email"</string>
+    <string name="auth_reset_password_reset_btn">"Reset"</string>
+    <string name="auth_reset_password_email_error">"Email address empty or not valid!"</string>
+
+    <!-- Reset password succeed -->
+    <string name="auth_reset_password_succeed"><![CDATA["The instructions\nwill be sent shortly!]]></string>
+    <string name="auth_reset_password_ok">Okay</string>
+
+    <!-- Create profile -->
+    <string name="auth_create_profile_title">"Lets create your profile"</string>
+    <string name="auth_create_profile_avatar">"Select avatar"</string>
+    <string name="auth_create_profile_nickname">"Pick nickname"</string>
+    <string name="auth_create_profile_create_btn">"Create profile"</string>
+    <string name="auth_create_profile_have_account">"Have an account?"</string>
+    <string name="auth_create_profile_nickname_error">"<![CDATA[Nickname can\'t is empty"]]></string>
+
+    <!-- Create account -->
+    <string name="auth_create_account_title">"One more thing to know"</string>
+    <string name="auth_create_account_email">"Email"</string>
+    <string name="auth_create_account_password">"Password"</string>
+    <string name="auth_create_account_password_again">"Repeat password"</string>
+    <string name="auth_create_account_register_btn">"Register account"</string>
+    <string name="auth_create_account_email_taken">"Email address already has been taken"</string>
+    <string name="auth_create_account_password_mismatch">"Password does not match"</string>
+
+    <!-- Home Bottom Menu -->
+    <string name="home_bottom_menu_summary">"Summaries"</string>
+    <string name="home_bottom_menu_reading">"Active quest"</string>
+    <string name="home_bottom_menu_settings">"Settings"</string>
+
+    <!-- Discover tab -->
+    <string name="summaries_title">"Summaries"</string>
+
+    <!-- Stream tab -->
+    <string name="reading_title">"Reading section"</string>
+
+    <!-- Profile tab -->
+    <string name="settings_title">"Settings"</string>
+    <string name="settings_update_chosen_topics">Update chosen topics:</string>
+
+    <string name="read_now">"Read now"</string>
+
+    <!-- Notifications -->
+    <string name="screen_recorder_notification_title">"simulacra"</string>
+    <string name="screen_recorder_notification_active">"Screen capturing…"</string>
+    <string name="screen_recorder_notification_stop">"Stop"</string>
+    <string name="screen_recorder_notification_shut_down">"Shut "</string>
+
+    <!-- ArCore errors -->
+    <string name="exception_arcore_not_installed">Please install ARCore</string>
+    <string name="exception_apk_too_old">Please update ARCore</string>
+    <string name="exception_sdk_too_old">Please update this app</string>
+    <string name="exception_device_not_compatible">This device does not support AR</string>
+    <string name="exception_user_declined_installation">User declined installation</string>
+    <string name="exception_unknown">Failed to create AR session</string>
+
+    <!-- Story details -->
+    <string name="story_details_views_lbl">%1$s views -</string>
+    <string name="story_details_themes">Theme</string>
+    <string name="story_details_summary">Summary</string>
+    <string name="story_details_start_reading">Start reading</string>
+    <string name="story_details_source"><u>Source</u></string>
+
+</resources>

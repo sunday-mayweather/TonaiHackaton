@@ -1,0 +1,45 @@
+apply plugin: 'com.android.library'
+apply from: '../sharedconfigs-include.gradle'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+dependencies {
+    implementation project(":analytics")
+
+    implementation project(":domain-core")
+    implementation project(":domain-user")
+    implementation project(":domain-discover")
+
+    implementation project(":data-user")
+    implementation project(":data-discover")
+
+    implementation project(":feature-common")
+
+    implementation kotlinDependencies.kotlinStdLib
+
+    implementation androidXDependencies.appCompat
+    implementation androidXDependencies.design
+    implementation androidXDependencies.constraintLayout
+    implementation androidXDependencies.androidKtx
+    implementation androidXDependencies.navigationFragment
+    implementation androidXDependencies.lifecycleExtensions
+    implementation androidXDependencies.lifecycle
+    implementation androidXDependencies.browser
+
+    implementation uiDependencies.lottie
+    implementation uiDependencies.glide
+    kapt uiDependencies.glideCompiler
+
+    implementation diDependencies.dagger
+    kapt diDependencies.daggerCompiler
+    implementation diDependencies.daggerAndroid
+    implementation diDependencies.daggerAndroidSupport
+    kapt diDependencies.daggerAndroidProcessor
+
+    implementation firebaseDependencies.core
+    implementation firebaseDependencies.messaging
+
+    implementation developmentDependencies.timber
+
+    testImplementation project(":tests-common")
+    testImplementation project(":tests-android-common")
+}

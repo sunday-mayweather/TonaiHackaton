@@ -1,0 +1,104 @@
+apply plugin: "de.mannodermaus.android-junit5"
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+ext.isCiServer = System.getenv().containsKey("CI_BUILD")
+
+android {
+    defaultConfig {
+        buildToolsVersion buildToolsVer
+        minSdkVersion minSdkVer
+        targetSdkVersion targetSdkVer
+        compileSdkVersion compileSdkVer
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // multiple libraries include localizations for the languages we do not support
+        // so to avoid including them in the apk we specify only the ones we use
+        vectorDrawables.useSupportLibrary = true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                // these arguments will result in "warning: The following options were not recognized by any processor"
+                // and this is fine because not all modules use them and it can be safely ignored,
+                // specifying them for each module separately is not an option either because
+                // they will just be propagated to all the dependencies anyway
+                arguments = [
+                        "room.schemaLocation"  : "$projectDir/schemas".toString(),
+                        "room.incremental"     : "true",
+                        "room.expandProjection": "true"//causes Room to rewrite a query to only contain the columns in the returning type POJO
+                ]
+            }
+        }
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        beta {
+        }
+    }
+
+    // Forcing proper java version across all the builds
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    if (gradle.startParameter.taskNames
+            .collect { item -> item.contains("UnitTestKotlin") }
+            .contains(true)) {
+        kotlinOptions.jvmTarget = jvmTargetVer
+    }
+
+    compileOptions {
+        kotlinOptions.jvmTarget = jvmTargetVer
+    }
+
+    //enabling kotlin view binding in adapters
+    androidExtensions.experimental = true
+
+    //optimizing build speed on local machine
+    if (!isCiServer) {
+        aaptOptions.cruncherEnabled = false
+    }
+
+    //setting reports location for each module and using junit platform
+    testOptions {
+        unitTests.all {
+            jvmArgs '-noverify'
+            // Always show the result of every unit test, even if it passes.
+            ignoreFailures = true
+            // path to the directory in which results will be stored (prefix connected- + modulename)
+            reports.junitXml.destination = file("../build/connected-$project.name")
+        }
+
+        junitPlatform {
+            filters {
+                engines {
+                    include 'junit', 'junit-jupiter'
+                }
+            }
+            jacocoOptions.taskGenerationEnabled = false
+        }
+    }
+
+}
+
+allprojects {
+    tasks.withType(JavaCompile).all {
+        options.compilerArgs += '-Adagger.gradle.incremental=enabled'
+        //disable build warnings for CI build
+        if (isCiServer) {
+            options.compilerArgs += [
+                    '-Xlint:-deprecation',
+                    "-Xlint:unchecked"
+            ]
+        }
+    }
+
+    afterEvaluate {
+        extensions.findByName('kapt')?.arguments {
+            arg("dagger.gradle.incremental", "enabled")
+        }
+    }
+}

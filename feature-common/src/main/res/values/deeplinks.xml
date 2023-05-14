@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Auth links -->
+    <string name="auth_login_deep_link" translatable="false">"https://simulacra.app/login"</string>
+    <string name="auth_create_account_deep_link" translatable="false">"https://simulacra.app/create-account"</string>
+
+    <!-- Discover links -->
+    <string name="discover_deep_link" translatable="false">"https://simulacra.app/discover"</string>
+
+    <!-- Stream links -->
+    <string name="active_quest_deep_link" translatable="false">"https://simulacra.app/activequest"</string>
+
+    <!-- Profile links -->
+    <string name="profile_deep_link" translatable="false">"https://simulacra.app/profile"</string>
+
+    <!-- Policies links -->
+    <string name="policies_deep_link" translatable="false">"https://simulacra.app/policies"</string>
+</resources>

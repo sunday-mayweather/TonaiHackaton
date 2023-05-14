@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/policies_graph"
+    app:startDestination="@id/policyFragment">
+
+    <fragment
+        android:id="@+id/policyFragment"
+        android:name="app.simulacra.policies.sections.PolicyFragment"
+        tools:layout="@layout/policy_fragment">
+
+        <deepLink app:uri="@string/policies_deep_link" />
+    </fragment>
+</navigation>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExtraTranslation">
+    <string name="app_google_play_link" translatable="false">https://play.google.com/store/apps/details?id=app.simulacra</string>
+    <string name="support_email" translatable="false">help@simulacra.app</string>
+    <string name="support_email_title" translatable="false">simulacra: Feedback</string>
+    <string name="file_provider" translatable="false">app.simulacra.fileprovider</string>
+    <string name="current_displayed_locale">en_US</string>
+</resources>

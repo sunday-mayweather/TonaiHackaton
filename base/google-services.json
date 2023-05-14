@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "283858211468",
+    "project_id": "simulacra-app",
+    "storage_bucket": "simulacra-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283858211468:android:e2720150703d1bd2c821a9",
+        "android_client_info": {
+          "package_name": "app.simulacra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283858211468-vdvg19j1umigfi0of6g84jpv6tnhbo92.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3LJXj1AqzvHzq9eRTvsAaNPb4pZ4l8SI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283858211468-vdvg19j1umigfi0of6g84jpv6tnhbo92.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

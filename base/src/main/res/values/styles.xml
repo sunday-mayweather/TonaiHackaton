@@ -1,0 +1,54 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Global color attributes -->
+        <item name="colorPrimary">@color/color_on_primary</item>
+        <item name="colorPrimaryVariant">@color/color_on_primary</item>
+        <item name="colorOnPrimary">@color/color_on_primary</item>
+        <item name="colorSecondary">@color/pure_gold</item>
+        <item name="colorSecondaryVariant">@color/color_secondary_variant</item>
+        <item name="colorOnSecondary">@color/color_on_secondary</item>
+        <item name="colorError">@color/color_error</item>
+        <item name="colorOnError">@color/color_on_error</item>
+        <item name="colorSurface">@color/color_on_primary</item>
+        <item name="colorOnSurface">@color/color_on_primary</item>
+        <item name="android:colorBackground">@color/color_on_primary</item>
+        <item name="colorOnBackground">@color/color_on_primary</item>
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:statusBarColor">@color/color_on_primary</item>
+        <item name="android:forceDarkAllowed" tools:ignore="NewApi">false</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <!-- windowBackground is overriden after app launch is handled -->
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+
+        <!-- Style to use for Snackbar in this theme. -->
+        <item name="snackbarStyle">@style/snackBarStyle</item>
+        <!-- Style to use for action button within a Snackbar in this theme. -->
+        <item name="snackbarButtonStyle">@style/snackBarButton</item>
+        <!-- Style to use for message text within a Snackbar in this theme. -->
+        <item name="snackbarTextViewStyle">@style/snackBarText</item>
+    </style>
+
+    <style name="snackBarStyle" parent="@style/Widget.MaterialComponents.Snackbar">
+        <item name="android:background">@drawable/custom_snackbar_background</item>
+    </style>
+
+    <style name="snackBarButton" parent="@style/Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/sandy_orange</item>
+        <item name="android:textColor">@color/ceramic</item>
+    </style>
+
+    <style name="snackBarText" parent="@style/Widget.MaterialComponents.Snackbar.TextView">
+        <item name="android:textColor">@color/ceramic</item>
+    </style>
+
+    <style name="ReadRoundedButton" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="cornerRadius">8dp</item>
+        <item name="colorPrimary">@color/pure_red</item>
+    </style>
+</resources>

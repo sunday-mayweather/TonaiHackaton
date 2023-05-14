@@ -1,0 +1,70 @@
+buildscript {
+    ext.kotlinVer = '1.7.20'
+    ext.buildToolsVer = '32.0.0'
+    ext.minSdkVer = 26
+    ext.targetSdkVer = 32
+    ext.compileSdkVer = 32
+    ext.jUnit5Ver = '1.8.2.1'
+    ext.navigationComponentVer = '2.5.2'
+    ext.jvmTargetVer = '11'
+
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven { url 'https://maven.fabric.io/public' }
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        final jacocoVer = '0.16.0'
+        final googleGsmVer = '4.3.14'
+        final crashlyticsVer = '2.9.2'
+        final appDistributionVer = '3.0.3'
+
+        classpath 'com.android.tools.build:gradle:7.3.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVer"
+        classpath "com.google.gms:google-services:$googleGsmVer"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVer"
+        classpath "com.vanniktech:gradle-android-junit-jacoco-plugin:$jacocoVer"
+        classpath "de.mannodermaus.gradle.plugins:android-junit5:$jUnit5Ver"
+        classpath "com.google.firebase:firebase-crashlytics-gradle:$crashlyticsVer"
+        classpath "com.google.firebase:firebase-appdistribution-gradle:$appDistributionVer"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationComponentVer"
+    }
+}
+
+apply plugin: "com.vanniktech.android.junit.jacoco"
+apply from: 'dependencies.gradle'
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven { url 'https://maven.fabric.io/public' }
+    }
+}
+
+junitJacoco {
+    jacocoVersion = '0.8.7'
+    excludes = ['**/*Module.*', '**/*Module*.*', '**/*$ViewInjector*.*', '**/*$ViewBinder*.*',
+                '**/Dagger*Component*.class', '**/Dagger*Subcomponent*.class', '**/*Subcomponent$Builder.class',
+                '**/*_MembersInjector.class', '**/*Module_*Factory.class', '**/*SimulacraApp.class',
+                '**/com/google', '**/events', '**/injection', '**/androidx', '**/utils', '**/database',
+                '**/lifecycle', '**/*Listener.*', '**/R.class', '**/R$*.class', '**/BR.class', '**/BR$*.class',
+                '**/BuildConfig.*', '**/Manifest*.*', '**/*Activity*.*', '**/*Activity.*',
+                '**/DataBinder*.*', '**/*Service.*', '**/*Service*.*', '**/*Receiver.*', '**/*View.*',
+                '**/*Fragment.*', '**/*Fragment*.*', '**/*Dialog.*', '**/*Dialog*.*', '**/*Radio.*',
+                '**/*Button.*', '**/*Adapter.*', '**/*Decoration.*', '**/*ListItem*.*', '**/*Vh.*',
+                '**/*ViewHolder.class', '**/*Holder.class', '**/*Builder.*', '**/*Factory.*',
+                '**/*Navigator.*', '**/Glide*.*', '**/*Companion.*', '**/ExoPlayer*.*', '**/*Callback.*',
+                '**/*OnClickListener.*', '**/*Navigator*.*', '**/*Renderer*.*', '**/*Creator.*',
+                '**/NotificationHelper*.*', '**/Sharing.*', '**/*Preference.*', '**/SimulacraApp.*',
+                '**/Analytics.*', '**/*TabContainer.*', '**/*Initializer.*']
+    includeNoLocationClasses = false
+    includeInstrumentationCoverageInMergedReport = false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,24 @@
+apply plugin: 'com.android.library'
+apply from: '../sharedconfigs-include.gradle'
+
+dependencies {
+    implementation project(":feature-common")
+
+    implementation kotlinDependencies.kotlinStdLib
+
+    implementation androidXDependencies.appCompat
+    implementation androidXDependencies.design
+    implementation androidXDependencies.constraintLayout
+    implementation androidXDependencies.androidKtx
+    implementation androidXDependencies.navigationFragment
+    implementation androidXDependencies.browser
+
+    implementation diDependencies.dagger
+    kapt diDependencies.daggerCompiler
+    implementation diDependencies.daggerAndroid
+    implementation diDependencies.daggerAndroidSupport
+    kapt diDependencies.daggerAndroidProcessor
+
+    testImplementation project(":tests-common")
+    testImplementation project(":tests-android-common")
+}

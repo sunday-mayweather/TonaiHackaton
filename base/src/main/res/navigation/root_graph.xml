@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_graph"
+    app:startDestination="@+id/fragmentSplash">
+
+    <include app:graph="@navigation/onboarding_graph" />
+
+    <include app:graph="@navigation/discover_graph" />
+
+    <include app:graph="@navigation/active_quest_graph" />
+
+    <include app:graph="@navigation/profile_graph" />
+
+    <include app:graph="@navigation/policies_graph" />
+
+    <fragment
+        android:id="@+id/fragmentSplash"
+        android:name="app.simulacra.sections.splash.SplashFragment">
+
+        <action
+            android:id="@+id/action_show_onboarding"
+            app:destination="@+id/onboarding_graph"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/root_graph"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_show_discover"
+            app:destination="@+id/discover_graph"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/root_graph"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+</navigation>

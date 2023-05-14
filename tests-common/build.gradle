@@ -1,0 +1,16 @@
+apply from: '../sharedconfigs-include-java.gradle'
+
+dependencies {
+    implementation project(':domain-core')
+
+    implementation kotlinDependencies.kotlinStdLib
+
+    api testDependencies.mockito
+    api testDependencies.mockitoKotlin
+    api testDependencies.mockitoInline
+    api testDependencies.assertJ
+    api testDependencies.jUnitJupiter
+    api testDependencies.jupiterEngine
+    api testDependencies.jupiterParametrized
+    api testDependencies.jupiterMockitoRunner
+}

@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+apply from: '../sharedconfigs-include.gradle'
+
+android {
+    defaultConfig {
+        buildConfigField 'String', 'AMPLITUDE_KEY', AMPLITUDE_KEY
+    }
+}
+
+dependencies {
+    implementation kotlinDependencies.kotlinStdLib
+
+    implementation androidXDependencies.appCompat
+
+    implementation diDependencies.dagger
+    kapt diDependencies.daggerCompiler
+    implementation diDependencies.daggerAndroid
+
+    implementation androidXDependencies.androidKtx
+
+    implementation(firebaseDependencies.crashlytics) {
+        transitive = true
+    }
+    implementation firebaseDependencies.core
+    implementation analyticsDependencies.amplitude
+
+    implementation developmentDependencies.timber
+}

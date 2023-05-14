@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/discover_graph"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_reading_selector"
+        android:title="@string/home_bottom_menu_summary"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/profile_graph"
+        android:title="@string/home_bottom_menu_settings"
+        android:icon="@drawable/ic_menu_settings_selector"
+        app:showAsAction="ifRoom" />
+</menu>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/active_quest_graph"
+    app:startDestination="@id/activeQuestFragment">
+
+    <fragment
+        android:id="@+id/activeQuestFragment"
+        android:name="app.simulacra.activequest.sections.ActiveQuestFragment"
+        tools:layout="@layout/active_quest_fragment">
+
+        <deepLink app:uri="@string/active_quest_deep_link" />
+
+    </fragment>
+</navigation>

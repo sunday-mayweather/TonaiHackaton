@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/onboarding_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="app.simulacra.onboarding.sections.WelcomeFragment"
+        tools:layout="@layout/welcome_fragment">
+
+        <action
+            android:id="@+id/action_show_choose_topics"
+            app:destination="@id/chooseTopicFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chooseTopicFragment"
+        android:name="app.simulacra.onboarding.sections.ChooseTopicsFragment"
+        tools:layout="@layout/choose_topics_fragment">
+    </fragment>
+</navigation>
